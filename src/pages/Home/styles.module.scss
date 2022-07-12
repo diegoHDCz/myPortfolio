@@ -9,11 +9,26 @@
 }
 
 .homeContent {
-  margin:0 20rem ;
+  margin: 0 20rem;
   font-size: 1.2rem;
   color: var(--gray-300);
   line-height: 2.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
+}
+
+.iconsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    margin: 0 2.2rem;
+    transition: 0.3s;
+  &:hover {
+    color: var(--yellow-900);
+  }
+  }
+
 }

@@ -1,3 +1,13 @@
+import { Header } from "../../components/Header";
+import styles from './styles.module.scss'
+
 export function Blog() {
-  return <h1>Em consutrção....</h1>
+  return (
+    <>
+      <Header />
+      <div className={styles.Container}>
+      <h1>Em consutrção....</h1>
+      </div>
+    </>
+  );
 }
