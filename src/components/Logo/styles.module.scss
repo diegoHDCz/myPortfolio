@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  color: var(--gray-300);
+
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }  
+}

@@ -1,0 +1,21 @@
+.skillsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  flex-direction: column;
+
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--yellow-900);
+  }
+
+  .skillsContent {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+

@@ -1,0 +1,19 @@
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  font-size: medium;
+  flex-direction: column;
+  margin: 5rem auto;
+}
+
+.homeContent {
+  margin:0 20rem ;
+  font-size: 1.2rem;
+  color: var(--gray-300);
+  line-height: 2.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
