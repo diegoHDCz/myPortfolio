@@ -2,7 +2,7 @@ import { Header } from "../../components/Header";
 import { Skills } from "../../components/Skills";
 import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import styles from "./styles.module.scss";
-import useWindowSize from "../../hooks/windowResize";
+
 export function Home() {
 
   return (

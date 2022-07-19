@@ -18,7 +18,7 @@ export function Skills() {
   return (
     <>
       <section className={styles.skillsContainer}>
-        <h3>Linguagnes & Tecnologias</h3>
+        <h3>Linguagens & Tecnologias</h3>
         <div className={styles.skillsContent}>
           <Card title="Angular" icon={SiAngular} />
           <Card title="React" icon={SiReact} />
