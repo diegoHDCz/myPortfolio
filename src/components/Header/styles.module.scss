@@ -1,9 +1,12 @@
+@import '../../styles/media-queries.scss';
+
 .headerContainer {
   height: 8rem;
-   border-bottom: 1px solid var(--gray-800);
+  border-bottom: 1px solid var(--gray-800);
 }
 
 .headerContent {
+
   max-width: 1120px;
   height: 8rem;
   margin: 0 auto;
@@ -12,11 +15,16 @@
   display: flex;
   align-items: flex-end;
   justify-content: end;
+
   nav {
     margin-left: 5rem;
     height: 5rem;
 
     a {
+      @include xs {
+      
+        margin-left: 2rem;
+     }
       display: inline-block;
       position: relative;
       padding: 0 0.5rem;
@@ -25,8 +33,9 @@
 
       transition: color 0.2s;
 
-      & + a {
+      &+a {
         margin-left: 2rem;
+    
       }
 
       &:hover {
@@ -50,6 +59,52 @@
       }
     }
   }
+}
+
+.ButtonStyle {
+  background-color: var(--gray-800);
+  border: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--yellow-900);
+  padding: 5px;
+}
 
 
+@media (max-width: 600px) {
+
+
+  .headerContent {
+
+    height: 8rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    nav {
+      margin-left: 5rem;
+      height: 5rem;
+
+      a {
+        display: inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+        line-height: 5rem;
+        color: var(--gray-300);
+
+        transition: color 0.2s;
+
+        &+a {
+          margin-left: 2rem;
+        }
+
+      }
+    }
+
+
+  }
 }

@@ -1,3 +1,4 @@
+
 import { IconType } from "react-icons";
 import styles from "./styles.module.scss";
 interface CardProps {

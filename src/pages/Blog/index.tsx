@@ -1,13 +1,16 @@
+import { BlogItem } from "../../components/BlogItem";
 import { Header } from "../../components/Header";
-import styles from './styles.module.scss'
+import { useGetPostsQuery } from "../../graphql/generated";
+import styles from "./styles.module.scss";
 
 export function Blog() {
+  const { data } = useGetPostsQuery();
+  console.log(data);
   return (
     <>
       <Header />
-      <div className={styles.Container}>
-      <h1>Em consutrção....</h1>
-      </div>
+      <BlogItem  />
+   
     </>
   );
 }

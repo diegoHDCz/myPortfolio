@@ -1,0 +1,9 @@
+query GetPosts {
+  posts(orderBy: publishedAt_DESC) {
+    id
+    slug
+    title
+    updatedAt
+    createdAt
+  }
+}

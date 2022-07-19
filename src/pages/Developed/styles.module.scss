@@ -1,3 +1,4 @@
+@import '../../styles//media-queries.scss';
 .Container {
   display: flex;
   align-items: center;
@@ -14,7 +15,16 @@
 }
 
 .Content {
-
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  @include xs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 

@@ -1,3 +1,4 @@
+@import '../../styles/media-queries.scss';
 .skillsContainer {
   display: flex;
   justify-content: space-around;
@@ -13,6 +14,15 @@
   }
 
   .skillsContent {
+    @include sm {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include xs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 2rem;
+    }
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5rem;
