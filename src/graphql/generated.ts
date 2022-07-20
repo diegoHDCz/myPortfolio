@@ -5836,7 +5836,7 @@ export type PageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', ti
 export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, slug: string, title: string, updatedAt: any, createdAt: any }> };
+export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, slug: string, title: string, excerpt?: string | null, updatedAt: any, createdAt: any, coverImage?: { __typename?: 'Asset', id: string, url: string } | null }> };
 
 
 export const PageDocument = gql`
@@ -5885,8 +5885,13 @@ export const GetPostsDocument = gql`
     id
     slug
     title
+    excerpt
     updatedAt
     createdAt
+    coverImage {
+      id
+      url
+    }
   }
 }
     `;

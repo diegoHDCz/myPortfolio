@@ -9,8 +9,13 @@ export function Blog() {
   return (
     <>
       <Header />
-      <BlogItem  />
-   
+      <div className={styles.Container}>
+      {data?.posts.map(post =>{
+      return  <BlogItem key={post.id} title={post.title} createdAt={new Date(post.createdAt)} slug={post.slug} excerpt={post.excerpt} imageItem={post.coverImage} />
+      })
+         
+      } 
+      </div>
     </>
   );
 }

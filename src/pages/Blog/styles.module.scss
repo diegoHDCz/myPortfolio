@@ -1,6 +1,15 @@
+@import '../../styles//media-queries.scss';
 .Container {
+  @include xs {
+    margin: 1rem 2rem; 
+  }
+  @include sm {
+    margin: 1rem 2rem;
+  }
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30vh;
+  flex-direction: column;
+  margin: 1rem 10rem;
+}
+.Body {
+  display: flex;
 }

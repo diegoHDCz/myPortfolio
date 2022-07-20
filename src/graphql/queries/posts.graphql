@@ -3,7 +3,12 @@ query GetPosts {
     id
     slug
     title
+    excerpt
     updatedAt
     createdAt
+    coverImage {
+      id
+      url
+    }
   }
 }
