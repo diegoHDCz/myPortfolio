@@ -1,0 +1,16 @@
+query getPostBySlug($slug: String!) {
+  post(where: { slug: $slug }) {
+    title
+    content {
+      html
+    }
+    updatedAt
+  }
+  coveerImage {
+    url(
+      transformation: {
+        image: { resize: { width: 400, heigtht: 400, fit: crop } }
+      }
+    )
+  }
+}

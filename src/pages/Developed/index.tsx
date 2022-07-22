@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 export function Developed() {
   return (
     <>
-      <Header />
+
       <main className={styles.Container}>
         <header>
           <h1>Projetos desenvolvidos</h1>

@@ -7,7 +7,7 @@ export function Home() {
 
   return (
     <>
-      <Header />
+
       <div className={styles.homeContainer}>
         <p className={styles.homeContent}>
           Olá sou um desenvolvedor de sistemas em constante evolução, visite meu

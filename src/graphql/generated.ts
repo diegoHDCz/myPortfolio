@@ -5826,12 +5826,12 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type PageQueryVariables = Exact<{
+export type GetPostBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', title: string, subtitle?: string | null, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null } | null } | null };
+export type GetPostBySlugQuery = { __typename?: 'Query', post?: { __typename?: 'Post', title: string, updatedAt: any, content: { __typename?: 'RichText', html: string, text: string, markdown: string, raw: any } } | null };
 
 export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5839,46 +5839,48 @@ export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, slug: string, title: string, excerpt?: string | null, updatedAt: any, createdAt: any, coverImage?: { __typename?: 'Asset', id: string, url: string } | null }> };
 
 
-export const PageDocument = gql`
-    query Page($slug: String!) {
-  page(where: {slug: $slug}) {
+export const GetPostBySlugDocument = gql`
+    query getPostBySlug($slug: String!) {
+  post(where: {slug: $slug}) {
     title
-    subtitle
-    seo {
-      title
-      description
+    content {
+      html
+      text
+      markdown
+      raw
     }
+    updatedAt
   }
 }
     `;
 
 /**
- * __usePageQuery__
+ * __useGetPostBySlugQuery__
  *
- * To run a query within a React component, call `usePageQuery` and pass it any options that fit your needs.
- * When your component renders, `usePageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetPostBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPostBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = usePageQuery({
+ * const { data, loading, error } = useGetPostBySlugQuery({
  *   variables: {
  *      slug: // value for 'slug'
  *   },
  * });
  */
-export function usePageQuery(baseOptions: Apollo.QueryHookOptions<PageQuery, PageQueryVariables>) {
+export function useGetPostBySlugQuery(baseOptions: Apollo.QueryHookOptions<GetPostBySlugQuery, GetPostBySlugQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<PageQuery, PageQueryVariables>(PageDocument, options);
+        return Apollo.useQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
       }
-export function usePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PageQuery, PageQueryVariables>) {
+export function useGetPostBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPostBySlugQuery, GetPostBySlugQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<PageQuery, PageQueryVariables>(PageDocument, options);
+          return Apollo.useLazyQuery<GetPostBySlugQuery, GetPostBySlugQueryVariables>(GetPostBySlugDocument, options);
         }
-export type PageQueryHookResult = ReturnType<typeof usePageQuery>;
-export type PageLazyQueryHookResult = ReturnType<typeof usePageLazyQuery>;
-export type PageQueryResult = Apollo.QueryResult<PageQuery, PageQueryVariables>;
+export type GetPostBySlugQueryHookResult = ReturnType<typeof useGetPostBySlugQuery>;
+export type GetPostBySlugLazyQueryHookResult = ReturnType<typeof useGetPostBySlugLazyQuery>;
+export type GetPostBySlugQueryResult = Apollo.QueryResult<GetPostBySlugQuery, GetPostBySlugQueryVariables>;
 export const GetPostsDocument = gql`
     query GetPosts {
   posts(orderBy: publishedAt_DESC) {
