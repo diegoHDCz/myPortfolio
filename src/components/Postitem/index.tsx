@@ -1,6 +1,6 @@
 import { useGetPostBySlugQuery } from "../../graphql/generated";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 interface PostItem {
   postSlug: string;
@@ -14,10 +14,10 @@ export function PostItem(props: PostItem) {
 
   return (
     <div
-    className={styles.Container}
-      dangerouslySetInnerHTML={{ __html: data?.post?.content.html as string}}
+      className={styles.Container}
+      dangerouslySetInnerHTML={{ __html: data?.post?.content.html as string }}
     >
-  
+      <p>Atualziado em: {data?.post?.updatedAt}</p>
     </div>
   );
 }

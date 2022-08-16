@@ -4,11 +4,12 @@ import {
   SiReact,
   SiVuedotjs,
   SiNodedotjs,
-  SiPostgresql,
+  SiMysql,
   SiMongodb,
   SiGraphql,
   SiDocker,
-  SiPython,
+  SiSpringboot,
+  SiJava,
 } from "react-icons/si";
 
 import { Card } from "../Card";
@@ -24,12 +25,12 @@ export function Skills() {
           <Card title="React" icon={SiReact} />
           <Card title="VueJS" icon={SiVuedotjs} />
           <Card title="NodeJS" icon={SiNodedotjs} />
-          <Card title="SQL" icon={SiPostgresql} />
+          <Card title="SQL" icon={SiMysql} />
           <Card title="NoSQL" icon={SiMongodb} />
-          <Card title="Laravel" icon={SiLaravel} />
+          <Card title="Spring" icon={SiSpringboot} />
           <Card title="GraphQL" icon={SiGraphql} />
           <Card title="Docker" icon={SiDocker} />
-          <Card title="Ptyhon" icon={SiPython} /> 
+          <Card title="Java" icon={SiJava} />
         </div>
       </section>
     </>
