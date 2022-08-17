@@ -1,7 +1,5 @@
 import styles from "./styles.module.scss";
 import { useGetPostBySlugQuery } from "../../graphql/generated";
-import { format } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
 
 interface PostItem {
   postSlug: string;
@@ -12,11 +10,7 @@ export function PostItem(props: PostItem) {
       slug: props.postSlug,
     },
   });
-  const dateFormatted = format(
-    new Date(data?.post?.updatedAt),
-    "EEEE' • 'd' de 'MMMM' • 'k'h'mm",
-    { locale: ptBR }
-  );
+
 
   return (
     <>
@@ -27,9 +21,7 @@ export function PostItem(props: PostItem) {
           }}
         ></span>
 
-        <p className={styles.DateTime}>
-          Atualizado em: {dateFormatted}
-        </p>
+   
       </div>
     </>
   );
